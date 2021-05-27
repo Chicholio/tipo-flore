@@ -1,2 +1,0 @@
-(this["webpackJsonptipo-flores"]=this["webpackJsonptipo-flores"]||[]).push([[0],{9:function(e,t,n){"use strict";n.r(t);var r=n(0),s=n.n(r),c=n(3),o=n.n(c),i=n(1);var a=function(){return Object(i.jsx)("div",{className:"App",children:"Hola"})};o.a.render(Object(i.jsx)(s.a.StrictMode,{children:Object(i.jsx)(a,{})}),document.getElementById("root"))}},[[9,1,2]]]);
-//# sourceMappingURL=main.97f61643.chunk.js.map
