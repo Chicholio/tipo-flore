@@ -4,8 +4,15 @@ import { useDispatch } from 'react-redux';
 import { ActionTipoFlor } from '../actions/ActionTipoFlor';
 import { useForm } from '../hooks/useForm';
 import uuid from 'react-uuid'
+import styled from 'styled-components'
 
-
+const DivModal = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+`
 
 const ModalButton = () => {
 
@@ -17,7 +24,6 @@ const ModalButton = () => {
     const [formValue, handleInputChange, reset] = useForm ({
         nombre: '',
         url: '',
-        precio: '',
         descripcion: ''
     })
 
@@ -36,7 +42,6 @@ const ModalButton = () => {
             id: uuid(),
             nombre,
             url,
-            precio,
             descripcion
         })
 
@@ -44,10 +49,14 @@ const ModalButton = () => {
     }
 
     return (
-        <div>
+        <DivModal>
             <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
+                Añade tu Tipo Flor
             </Button>
+
+            <hr style={{width: '100%'}} />
+
+            <p>Aqui se mostraran tus flores</p>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -78,17 +87,6 @@ const ModalButton = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>Precio Tipo Flor</Form.Label>
-                            <Form.Control 
-                                type="text"
-                                placeholder="Precio TipoFlor"
-                                name="precio"
-                                autoComplete="off"
-                                value={precio}
-                                onChange={handleInputChange}
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
                             <Form.Label>Descripcion Tipo Flor</Form.Label>
                             <Form.Control
                                 as="textarea"
@@ -110,7 +108,7 @@ const ModalButton = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </div>
+        </DivModal>
     )
 }
 
